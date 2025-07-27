@@ -6358,6 +6358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 212805184}
   bestScoreText: {fileID: 78510290}
+  _okButton: {fileID: 1376248569}
 --- !u!114 &1058353748
 MonoBehaviour:
   m_ObjectHideFlags: 0

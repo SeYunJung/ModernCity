@@ -9,7 +9,7 @@ public class ResultUI : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI bestScoreText;
 
-    private Button _okButton;
+    public Button _okButton;
 
     private MainUIManager _mainUIManager;
 
