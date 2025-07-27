@@ -7,6 +7,8 @@ TagManager:
   - Door
   - obstacle
   - spike
+  - ground
+  - spikes
   layers:
   - Default
   - TransparentFX

@@ -2,8 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractiveManager : Singleton<InteractiveManager>
+public class InteractiveManager : MonoBehaviour
 {
+    // 싱글톤 구현 => 다른 씬에서도 사용하기 위해 싱글톤으로 구현 
+    private static InteractiveManager _instance = null;
+    public static InteractiveManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                return null;
+            }
+            return _instance;
+        }
+    }
+
     // 상호작용 영역을 List<Rect>에 저장하자. 
     // 일단 List<Rect> 타입 변수를 만들자. 
     [SerializeField] private List<Rect> _interactiveAreas;
@@ -12,6 +26,21 @@ public class InteractiveManager : Singleton<InteractiveManager>
     [SerializeField] private Color gizmoColor = new Color(1, 0, 0, .3f);
 
     private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            Init();
+
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    void Init()
     {
         _interactiveAreas.Add(new Rect(4, 1, 2, 2));
     }
