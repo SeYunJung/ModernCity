@@ -6,7 +6,8 @@ public enum UIType
 {
     Home,
     Game,
-    Retry
+    Retry,
+    Dialogue2
 }
 
 public class MiniGameUIManager : MonoBehaviour

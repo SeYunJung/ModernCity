@@ -2341,15 +2341,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_105
+      name: gir1_Idle
       rect:
         serializedVersion: 2
-        x: 410
+        x: 408
         y: 238
-        width: 12
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -10274,6 +10274,7 @@ TextureImporter:
       crosswalk_4: -723803340
       crosswalk_5: -489468610
       crosswalk_6: 42121087
+      gir1_Idle: -474926283
       line_1: -670260140
       line_2: 782052045
       man1_Idle: -94659333
@@ -10312,7 +10313,6 @@ TextureImporter:
       tilemap_1: -715842022
       tilemap_100: -872488859
       tilemap_104: 550348735
-      tilemap_105: -474926283
       tilemap_106: -2087872812
       tilemap_107: -140408402
       tilemap_11: 461070962

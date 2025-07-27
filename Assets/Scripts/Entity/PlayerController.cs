@@ -8,18 +8,14 @@ public class PlayerController : BaseController
 {
     private InteractiveManager _interactiveManager;
     private Rect _miniGameArea;
+    private Rect _leaderBoardArea;
 
     private bool isInsideMiniGameArea;
     private bool isMiniGameStart;
 
     private GameManager _gameManager;
 
-    //private SpriteRenderer _spriteRenderer;
-    //private Color _spriteColor;
-
-    //private BoxCollider2D _collider;
-
-    //private MiniGameManager1 _miniGameManager1;
+    private bool _hitNPC;
 
     protected override void Awake()
     {
@@ -45,15 +41,14 @@ public class PlayerController : BaseController
         base.Start();
         _interactiveManager = InteractiveManager.Instance;
         _miniGameArea = _interactiveManager.GetMiniGameArea();
+        _leaderBoardArea = _interactiveManager.GetLeaderBoardArea();
 
         _gameManager = GameManager.Instance;
-
-        //_miniGameManager1 = MiniGameManager1.Instance;
-        //_miniGameManager1.AddobjectsToKeep(gameObject);
     }
 
     private void Update()
     {
+        //Debug.Log($"moveDirection = {_movementDirection}");
         // 플레이어가 이동하다가 미니게임 영역(특정영역)에 도달하면 
         // 특정영역을 알려면 InteractiveManager가 알려줘야 한다. InteractiveManager를 가져오자. 
         // 근데 Manager잖아. InteractiveManager는 나중에 다른 곳에서 사용할 수 있으니 싱글톤으로 만들자. 
@@ -77,6 +72,18 @@ public class PlayerController : BaseController
                 isMiniGameStart = true;
             }
         }
+
+        // NPC와 충돌하면
+        if (_hitNPC)
+        {
+            _hitNPC = false;
+            _gameManager.RequestDialogue();
+        }
+        // NPC와 충돌은 했지만 E키를 안 눌렀으면 
+        //else if(_hitNPC && !Input.GetKeyDown(KeyCode.E))
+        //{
+        //    _hitNPC = false;
+        //}
     }
 
     protected override void FixedUpdate()
@@ -84,13 +91,10 @@ public class PlayerController : BaseController
         base.FixedUpdate();
     }
 
-    //private void Init()
-    //{
-    //    _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-    //    _collider = GetComponent<BoxCollider2D>();
-    //    //_miniGameManager1 = MiniGameManager1.Instance;
-    //    //Time.timeScale = 1.0f;
-    //}
+    public void ApplyKnockback()
+    {
+        Debug.Log("넉백 적용");
+    }
 
     private void OnMove(InputValue inputValue)
     {
@@ -102,5 +106,15 @@ public class PlayerController : BaseController
                 (_movementDirection == Vector3.left || ((_movementDirection.x < 0 && _movementDirection.y > 0) || (_movementDirection.x < 0 && _movementDirection.y < 0))) ? State.LeftMove :
                 (_movementDirection == Vector3.right || ((_movementDirection.x > 0 && _movementDirection.y > 0) || (_movementDirection.x > 0 && _movementDirection.y < 0))) ? State.RightMove :
                 (_movementDirection == Vector3.up) ? State.TopMove : State.BottomMove;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("npc"))
+        {
+            Debug.Log("NPC충돌!");
+            _hitNPC = true;
+            // _hitNPC가 true이면 대화창이 뜨게 하자. 
+        }
     }
 }

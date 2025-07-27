@@ -86,4 +86,16 @@ public class GameManager : MonoBehaviour
     {
         _mainUIManager.ShowMiniGameResult();
     }
+
+    public void RequestDialogue()
+    {
+        _mainUIManager.ShowDialogue();
+    }
+
+    public void Knockback()
+    {
+        Debug.Log("³Ë¹é!");
+        PlayerController playerController = FindObjectOfType<PlayerController>();
+        playerController.ApplyKnockback();
+    }
 }

@@ -43,11 +43,17 @@ public class InteractiveManager : MonoBehaviour
     void Init()
     {
         _interactiveAreas.Add(new Rect(4, 1, 2, 2));
+        _interactiveAreas.Add(new Rect(-1, 3, 2, 2));
     }
 
     public Rect GetMiniGameArea()
     {
         return _interactiveAreas[0];
+    }
+
+    public Rect GetLeaderBoardArea()
+    {
+        return _interactiveAreas[1]; 
     }
 
     // 기즈모 그려주는 메서드 

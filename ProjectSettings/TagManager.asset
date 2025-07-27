@@ -9,6 +9,7 @@ TagManager:
   - spike
   - ground
   - spikes
+  - npc
   layers:
   - Default
   - TransparentFX

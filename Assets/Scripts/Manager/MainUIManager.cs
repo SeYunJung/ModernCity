@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MainUIManager : MonoBehaviour
@@ -19,6 +20,7 @@ public class MainUIManager : MonoBehaviour
     }
 
     public ResultUI resultUI;
+    public DialogueUI diaLogueUI;   
 
     private void Awake()
     {
@@ -51,6 +53,33 @@ public class MainUIManager : MonoBehaviour
             case UIType.Home:
                 resultUI.gameObject.SetActive(false);
                 break;
+            case UIType.Dialogue2:
+                diaLogueUI.npcText2.gameObject.SetActive(false);
+                diaLogueUI.okButton2.gameObject.SetActive(false);
+                diaLogueUI.gameObject.SetActive(false);
+                break;
         }
+    }
+
+    public void ActiveUI(UIType type)
+    {
+        switch (type)
+        {
+            case UIType.Dialogue2:
+                // Dialogue1 UI지우고 2띄우기
+                diaLogueUI.npcText1.gameObject.SetActive(false);
+                diaLogueUI.okButton1.gameObject.SetActive(false);
+                diaLogueUI.npcText2.gameObject.SetActive(true);
+                diaLogueUI.okButton2.gameObject.SetActive(true);
+                break;
+        }
+    }
+
+    public void ShowDialogue()
+    {
+        //diaLogueUI.ActiveUI();
+        diaLogueUI.gameObject.SetActive(true);
+        diaLogueUI.npcText1.gameObject.SetActive(true);
+        diaLogueUI.okButton1.gameObject.SetActive(true);
     }
 }
