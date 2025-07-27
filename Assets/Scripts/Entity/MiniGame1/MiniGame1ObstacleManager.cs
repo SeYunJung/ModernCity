@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MiniGameObstacleManager1 : MonoBehaviour
+public class MiniGameObstacleManager1 : Singleton<MiniGameObstacleManager1>
 {
     public int obstacleCount = 5;
 
@@ -14,14 +14,6 @@ public class MiniGameObstacleManager1 : MonoBehaviour
 
     private Vector3 prePosition;
     public float xPadding = 2f;
-
-    private static MiniGameObstacleManager1 _instance;
-    public static MiniGameObstacleManager1 Instance { get { return _instance; } }
-
-    private void Awake()
-    {
-        _instance = this;
-    }
 
     // 처음 시작할 때 위 아래(top, bottom) 위치 조정 후, 장애물(Obstacle) 배치
     void Start()

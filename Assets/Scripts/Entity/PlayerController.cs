@@ -12,9 +12,30 @@ public class PlayerController : BaseController
     private bool isInsideMiniGameArea;
     private bool loopCut;
 
+    private SpriteRenderer _spriteRenderer;
+    private Color _spriteColor;
+
+    private BoxCollider2D _collider;
+
+    private MiniGameManager1 _miniGameManager1;
+
     protected override void Awake()
     {
         base.Awake();
+
+        Init();
+
+        // 씬이 실행되면 Player오브젝트를 DontDestroyOnLoad로 옮기기
+        // => 미니게임에서 다시 메인씬으로 돌아왔을 때 기존 플레이어를 그대로 쓰기 위해서 
+        var objs = FindObjectsOfType<PlayerController>();
+        if(objs.Length == 1)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     protected override void Start()
@@ -22,29 +43,42 @@ public class PlayerController : BaseController
         base.Start();
         _interactiveManager = InteractiveManager.Instance;
         _miniGameArea = _interactiveManager.GetMiniGameArea();
+
+        //_miniGameManager1 = MiniGameManager1.Instance;
+        //_miniGameManager1.AddobjectsToKeep(gameObject);
     }
 
-    protected override void FixedUpdate()
+    private void Update()
     {
-        base.FixedUpdate();
-
         // 플레이어가 이동하다가 미니게임 영역(특정영역)에 도달하면 
         // 특정영역을 알려면 InteractiveManager가 알려줘야 한다. InteractiveManager를 가져오자. 
         // 근데 Manager잖아. InteractiveManager는 나중에 다른 곳에서 사용할 수 있으니 싱글톤으로 만들자. 
-        //if ()
-        //{
-        //    Debug.Log("미니게임을 실행한다");
-        //}
         if (!loopCut)
         {
             isInsideMiniGameArea = _miniGameArea.Contains(transform.position);
             if (isInsideMiniGameArea)
             {
                 Debug.Log("미니게임을 실행한다.");
+                _miniGameManager1.SetInvisible_TriggerCollider(_spriteRenderer, _collider);
+
+                // 다시 MainScene으로 돌아왔을 때는 알파값으로 투명도 낮추고 콜라이더에 트리거 끄기 
                 SceneManager.LoadScene("MiniGame1");
                 loopCut = true;
             }
         }
+    }
+
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
+
+    private void Init()
+    {
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _collider = GetComponent<BoxCollider2D>();
+        _miniGameManager1 = MiniGameManager1.Instance;
+        Time.timeScale = 1.0f;
     }
 
     private void OnMove(InputValue inputValue)

@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
 
     private Animator _animator;
 
-    private MiniGameManager1 _gameManager;
+    private MiniGameManager1 _miniGameManager;
+    [SerializeField] private MiniGameUIManager1 _uiManager;
 
     private void Awake()
     {
@@ -33,7 +34,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        _gameManager = MiniGameManager1.Instance;
+        _miniGameManager = MiniGameManager1.Instance;
     }
 
     private void FixedUpdate()
@@ -67,10 +68,12 @@ public class Player : MonoBehaviour
 
         if (_isDead)
         {
-            if (Input.GetKey(KeyCode.Space) || Input.GetMouseButtonDown(0))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
+            //if (Input.GetKey(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            //{
+            //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //}
+            // 죽으면 재도전 여부 물어보기 
+            _uiManager.ActiveUI(UIType.RetryUI); // 재도전 UI 띄우기
         }
     }
 
@@ -87,7 +90,7 @@ public class Player : MonoBehaviour
             // 죽은 애니메이션 보이게 하기 -> 애니메이터가 필요하다. 
             _animator.SetInteger("isDead", 1);
 
-            _gameManager.Lose();
+            _miniGameManager.Lose();
 
             return;
         }
@@ -100,7 +103,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("spike"))
         {
             // 점수 추가
-            _gameManager.AddScore();
+            _miniGameManager.AddScore();
         }
     }
 }
