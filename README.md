@@ -1,8 +1,10 @@
 <div align="center">
 <h2> 🎮 스파르타 메타버스 프로젝트 🎮 </h2>
 <img width="752" height="417" alt="image" src="https://github.com/user-attachments/assets/3dd58df7-0c97-43ca-b884-bf077fde7559" />
+<p>
 <b>'Modern City'</b>는 작은 도시 속에서 NPC들과 대화를 나누고, 미니게임으로 하루를 보낼 수 있는 게임입니다.   
 특정 장소에서 열리는 미니게임에 도전해 높은 점수를 기록하고, 리더보드에서 친구들과 경쟁해보세요!
+</p>
 </div>
 
 ## 목차
