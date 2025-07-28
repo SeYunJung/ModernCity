@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UserUI;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class GameManager : MonoBehaviour
     }
 
     private MainUIManager _mainUIManager;
+    private MiniGameUIManager _miniGameUIManager;
 
     private void Awake()
     {
@@ -38,6 +41,31 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _mainUIManager = MainUIManager.Instance;
+        _miniGameUIManager = MiniGameUIManager.Instance;
+    }
+
+    public MiniGameUIManager GetMiniGameManager()
+    {
+        return _miniGameUIManager;
+    }
+
+    public void RequestRankingData()
+    {
+        // 데이터를 불러올 경로 지정
+        string path = Path.Combine(Application.dataPath, "ranking.json");
+
+        if (!File.Exists(path))
+        {
+            //_playerDataPakage = new PlayerDataPakage();
+            //return;
+            Debug.LogError("파일 없음");
+        }
+        // 파일의 텍스트를 string으로 저장
+        string jsonData = File.ReadAllText(path);
+        // 이 Json데이터를 역직렬화하여 playerData에 넣어줌
+        PlayerDataPakage playerDataPakage = JsonUtility.FromJson<PlayerDataPakage>(jsonData);
+
+        _mainUIManager.SetLeaderBoard(playerDataPakage);
     }
 
     public void LoadScene(string sceneName)

@@ -7,7 +7,9 @@ public enum UIType
     Home,
     Game,
     Retry,
-    Dialogue2
+    Dialogue2,
+    User,
+    LeaderBoard
 }
 
 public class MiniGameUIManager : MonoBehaviour
@@ -29,6 +31,10 @@ public class MiniGameUIManager : MonoBehaviour
     public GameObject homeUI;
     public GameObject gameUI;
     public GameObject retryUI;
+    public GameObject userUI;
+    public GameObject leaderBoardUI;
+
+    private List<RankingData> rankingList = new List<RankingData>();
 
     private void Awake()
     {
@@ -60,6 +66,12 @@ public class MiniGameUIManager : MonoBehaviour
             case UIType.Retry:
                 retryUI.SetActive(false);
                 break;
+            case UIType.User:
+                userUI.SetActive(false);
+                break;
+            case UIType.LeaderBoard:
+                leaderBoardUI.SetActive(false);
+                break;
         }
     }
     
@@ -75,6 +87,9 @@ public class MiniGameUIManager : MonoBehaviour
                 break;
             case UIType.Retry:
                 retryUI.SetActive(true);
+                break;
+            case UIType.User:
+                userUI.SetActive(true);
                 break;
         }
     }
@@ -101,5 +116,14 @@ public class MiniGameUIManager : MonoBehaviour
 
         Debug.Log($"현재점수 : {PlayerPrefs.GetInt("Score")}");
         Debug.Log($"최고점수 : {PlayerPrefs.GetInt("BestScore")}");
+    }
+
+    public class RankingData
+    {
+        private int _rank;
+        private string _name;
+        private int _score;
+
+
     }
 }

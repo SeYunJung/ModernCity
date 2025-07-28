@@ -18,6 +18,11 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
+        if(player == null)
+        {
+            player = GameObject.FindObjectOfType<PlayerController>().transform;
+        }
+
         // 카메라가 따라갈 위치 
         Vector3 desiredPosition = player.position + distance;
         desiredPosition.z = transform.position.z; // z축은 -10으로 유지 => 2D카메라는 z축이 0보다 작아야 오브젝트가 보임. 

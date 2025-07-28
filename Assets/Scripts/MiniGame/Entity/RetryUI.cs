@@ -48,12 +48,10 @@ public class RetryUI : MonoBehaviour
         _miniGameUIManager.SaveScore();
 
         _miniGameUIManager.InActiveUI(UIType.Retry);
-        _gameManager.ActiveTime();
-        _gameManager.PlayerVisibleMode(_player);
-        _gameManager.LoadScene("MainScene");
 
-        // 게임 결과 UI 띄우기 
-        // MainScene에서 MainUIManager로 게임 결과 UI띄우기
-        _gameManager.RequestResultUI();
+        // 현재점수와 최고점수가 PlayerPrefs에 저장된 상태
+
+        // 플레이어가 자신의 이름을 입력하게 한다. 
+        _miniGameUIManager.ActiveUI(UIType.User);
     }
 }

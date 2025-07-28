@@ -12,6 +12,8 @@ public class PlayerController : BaseController
 
     private bool isInsideMiniGameArea;
     private bool isMiniGameStart;
+    private bool isLeaderBoardStart;
+    private bool isLeaderBoardArea;
 
     private GameManager _gameManager;
 
@@ -27,8 +29,6 @@ public class PlayerController : BaseController
     protected override void Awake()
     {
         base.Awake();
-
-        //Init();
 
         // 씬이 실행되면 Player오브젝트를 DontDestroyOnLoad로 옮기기
         // => 미니게임에서 다시 메인씬으로 돌아왔을 때 기존 플레이어를 그대로 쓰기 위해서 
@@ -98,9 +98,23 @@ public class PlayerController : BaseController
             }
         }
 
-        if(_rigid.velocity.y == -1)
+        if (!isLeaderBoardStart)
         {
-            Debug.Log($"벨로시티 : {_rigid.velocity}");
+            isLeaderBoardArea = _leaderBoardArea.Contains(transform.position);
+            if (isLeaderBoardArea)
+            {
+                Debug.Log("리더보드를 실행한다.");
+                MainUIManager manager = MainUIManager.Instance;
+
+                // 데이터 로드
+                //MiniGameUIManager miniGameUIManager = _gameManager.GetMiniGameManager();
+                //Debug.Log($"miniGame = {miniGameUIManager}");
+                _gameManager.RequestRankingData();
+
+                manager.ActiveUI(UIType.LeaderBoard);
+
+                isLeaderBoardStart = true;
+            }
         }
     }
 
@@ -112,7 +126,6 @@ public class PlayerController : BaseController
 
     public void ApplyKnockback()
     {
-        Debug.Log("넉백 적용");
         Knockback();
     }
 
