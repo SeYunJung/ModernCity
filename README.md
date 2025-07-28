@@ -31,7 +31,7 @@
 <br>
 
 ## 게임 설명
-|![image](https://github.com/user-attachments/assets/f3e46123-8a42-4ce9-99fa-2b5141951ba0)|
+|![image](https://github.com/user-attachments/assets/3dd58df7-0c97-43ca-b884-bf077fde7559)|
 |:---:|
 |시작 화면|
 
