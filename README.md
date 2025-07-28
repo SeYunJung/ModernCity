@@ -35,7 +35,7 @@
 |:---:|
 |시작 화면|
 
-|![image](https://github.com/user-attachments/assets/045b37d2-aefb-4104-87f1-12aa64c1c4d3)|![image](https://github.com/user-attachments/assets/ebce9475-35ab-4387-a7bd-90552732619e)|
+|![image](https://github.com/user-attachments/assets/045b37d2-aefb-4104-87f1-12aa64c1c4d3)|![image](https://github.com/user-attachments/assets/7cf108e0-091a-4b8d-87ff-a94aa5bc81cf)|
 |:---:|:---:|
 |미니게임 화면|NPC 상호작용 화면|
 
