@@ -56,8 +56,6 @@ public class GameManager : MonoBehaviour
 
         if (!File.Exists(path))
         {
-            //_playerDataPakage = new PlayerDataPakage();
-            //return;
             Debug.LogError("파일 없음");
         }
         // 파일의 텍스트를 string으로 저장

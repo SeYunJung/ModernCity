@@ -41,8 +41,6 @@ public class MainUIManager : MonoBehaviour
     public void ShowMiniGameResult()
     {
         Debug.Log("게임결과!");
-        //resultUI = GameObject.Find("ResultPanel").GetComponent<ResultUI>();
-        //resultUI = GameObject.Find("Canvas").transform.Find("ResultPanel").GetComponent<ResultUI>();
         resultUI = GameObject.Find("Canvas").transform.GetChild(0).GetComponent<ResultUI>();    
         resultUI.Init();
         resultUI.gameObject.SetActive(true);
@@ -85,7 +83,6 @@ public class MainUIManager : MonoBehaviour
 
     public void ShowDialogue()
     {
-        //diaLogueUI.ActiveUI();
         diaLogueUI.gameObject.SetActive(true);
         diaLogueUI.npcText1.gameObject.SetActive(true);
         diaLogueUI.okButton1.gameObject.SetActive(true);

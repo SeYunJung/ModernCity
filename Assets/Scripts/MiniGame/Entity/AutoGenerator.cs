@@ -38,18 +38,6 @@ public class AutoGenerator : MonoBehaviour
             Vector3 collidingObjectPosition = collision.transform.position;
             collidingObjectPosition.x = collidingObjectPosition.x + _spikeGap;
             collision.transform.position = collidingObjectPosition;
-
-            //Vector3 child1LocalPosition = collision.gameObject.transform.GetChild(0).transform.localPosition;
-            //Vector3 child2LocalPosition = collision.gameObject.transform.GetChild(1).transform.localPosition;
-            //child1LocalPosition.x = 0;
-            //child2LocalPosition.x = 0;
-            //collision.transform.GetChild(0).transform.localPosition = child1LocalPosition;
-            //collision.transform.GetChild(1).transform.localPosition = child2LocalPosition;
-
-
-            //Vector3 parentPosition = collision.gameObject.transform.parent.position;
-            //parentPosition.x = parentPosition.x + _groundGap;
-            //collision.gameObject.transform.parent.position = parentPosition;
             return;
         }
     }

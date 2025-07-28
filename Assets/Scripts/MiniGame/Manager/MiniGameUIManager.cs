@@ -49,7 +49,6 @@ public class MiniGameUIManager : MonoBehaviour
         homeUI.SetActive(true);
 
         // 최고점수 로드
-        //gameUI.gameObject.GetComponent<GameUI>().SetBestScore();
         gameUI.gameObject.GetComponent<GameUI>().SetScore();
     }
 
@@ -123,7 +122,5 @@ public class MiniGameUIManager : MonoBehaviour
         private int _rank;
         private string _name;
         private int _score;
-
-
     }
 }

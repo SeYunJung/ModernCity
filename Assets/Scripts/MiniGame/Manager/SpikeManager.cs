@@ -25,7 +25,6 @@ public class SpikeManager : MonoBehaviour
 
             // 길이는 랜덤 
             // 1 ~ 1.35까지 
-            //float number = Random.Range(1.0f, 1.36f);
             float number = yScaleArray.OrderBy(yPos => Random.value).First(); // 랜덤으로 y축 크기 가져와서 
             spike.transform.GetChild(0).localScale = new Vector3(1, number, 1);
             spike.transform.GetChild(1).localScale = new Vector3(1, number, 1);

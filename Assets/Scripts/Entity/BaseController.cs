@@ -29,10 +29,6 @@ public class BaseController : MonoBehaviour
 
     private AnimationController _animationController;
 
-    //protected bool _isKnockback;
-    //public float selfKnockbackPower;
-    //public float knockbackTime;
-
     protected virtual void Awake()
     {
         _rigid = GetComponent<Rigidbody2D>();
@@ -46,15 +42,7 @@ public class BaseController : MonoBehaviour
 
     protected virtual void Update()
     {
-        //if(_isKnockback)
-        //{
-        //    knockbackTime += Time.deltaTime;
-        //    if(knockbackTime >= 1f)
-        //    {
-        //        knockbackTime = 0.0f;
-        //        _isKnockback = false;
-        //    }
-        //}
+        
     }
 
     protected virtual void FixedUpdate()
@@ -64,28 +52,7 @@ public class BaseController : MonoBehaviour
 
     void Movement()
     {
-        //if (_isKnockback)
-        //{
-        //    //_rigid.velocity = new Vector3(0, -selfKnockbackPower, 0);
-        //    //_rigid.velocity = Vector2.zero;
-        //    //_rigid.AddForce(new Vector2(0, -selfKnockbackPower), ForceMode2D.Impulse);
-
-        //    //_movementDirection *= 0.2f;
-        //    //_movementDirection += new Vector3(0, -selfKnockbackPower, 0);
-
-        //    //_movementDirection = Vector3.down;
-        //    //_isKnockback = false;
-        //    //ApplyKnockback();
-        //}
-        //else
-        //{
         _rigid.velocity = _movementDirection * _moveSpeed;
-        //}
         _animationController.MoveAnimation(state); // 애니메이션 적용
     }
-
-    //void ApplyKnockback()
-    //{
-    //    _rigid.AddForce(Vector3.down * selfKnockbackPower, ForceMode2D.Impulse);
-    //}
 }

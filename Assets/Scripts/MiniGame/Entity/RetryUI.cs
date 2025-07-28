@@ -35,10 +35,8 @@ public class RetryUI : MonoBehaviour
         // 현재점수 리셋 
         _miniGameUIManager.gameUI.GetComponent<GameUI>().ResetScore();
 
-        //_gameManager.ActiveTime();
         _gameManager.InActiveTime();
         _miniGameUIManager.InActiveUI(UIType.Retry);
-        //_miniGameUIManager.ActiveUI(UIType.Game);
         _gameManager.LoadScene("MiniGame_1");
     }
 
