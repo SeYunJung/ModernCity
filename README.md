@@ -54,20 +54,9 @@
 <br>
 
 ## 게임 시연
-
-
-https://github.com/user-attachments/assets/8d321147-fa13-4ec9-8ddb-8e4bdd09afa4
-https://github.com/user-attachments/assets/23d46ebb-b40a-47b9-bf1a-96eae82cf0ba
-https://github.com/user-attachments/assets/a81f0f95-5377-4bfd-ab01-38e0ca6a3c6b
-
-
-
-
-![1](https://github.com/user-attachments/assets/bb6ad21f-7842-47ad-95c1-b70a5fa0d9bf)
-![2](https://github.com/user-attachments/assets/4fd1e0f1-cac7-4819-80ff-e0a817aa14db)
-![3](https://github.com/user-attachments/assets/8a9303da-dd0d-4cb3-b7ba-9313c8ea1f09)
-![4](https://github.com/user-attachments/assets/512410c0-1337-4f43-a539-f3486017f8de)
-![5](https://github.com/user-attachments/assets/a47e7065-339e-4be6-a078-c08237422bda)
+![1](https://github.com/user-attachments/assets/8d321147-fa13-4ec9-8ddb-8e4bdd09afa4)
+![2](https://github.com/user-attachments/assets/23d46ebb-b40a-47b9-bf1a-96eae82cf0ba)
+![3](https://github.com/user-attachments/assets/a81f0f95-5377-4bfd-ab01-38e0ca6a3c6b)
 
 <br>
 
