@@ -54,6 +54,16 @@
 <br>
 
 ## 게임 시연
+
+
+![NPC](https://github.com/user-attachments/assets/64905ab4-bfb0-4833-8923-f2207614893a)
+![MiniGame](https://github.com/user-attachments/assets/b258c353-0ab0-4b7b-95cc-2f914daeccf6)
+![Leader Board](https://github.com/user-attachments/assets/acebb684-ac02-4a24-aad1-b4d24194173c)
+
+
+
+
+
 ![1](https://github.com/user-attachments/assets/8d321147-fa13-4ec9-8ddb-8e4bdd09afa4)
 ![2](https://github.com/user-attachments/assets/23d46ebb-b40a-47b9-bf1a-96eae82cf0ba)
 ![3](https://github.com/user-attachments/assets/a81f0f95-5377-4bfd-ab01-38e0ca6a3c6b)
