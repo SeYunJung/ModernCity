@@ -62,46 +62,36 @@
 ## 구현 기능 (필수 기능)
 (캐릭터 이동 및 맵 탐색)
 <p>WASD 또는 화살표 키를 사용해 2D 캐릭터가 맵을 자유롭게 이동</p>
-<img width="1191" height="703" alt="title" src="https://github.com/user-attachments/assets/f3e46123-8a42-4ce9-99fa-2b5141951ba0" />
 
 <br>
 (맵 설계 및 상호작용 영역)
 <p>간단한 맵을 설계하고, 특정 영역에서 상호작용 이벤트 발생</p>
-<img width="852" height="450" alt="status" src="https://github.com/user-attachments/assets/1cf1bb56-1b2d-4619-9b7b-07bd12c5714d" />
 
 <br>
 <br>
 (미니게임 실행)<br>
 <p>특정 영역에서 간단한 미니 게임을 실행</p>
-<img width="1207" height="663" alt="battle" src="https://github.com/user-attachments/assets/48ef8e28-8a68-4c3c-9314-2e75405da45a" />
 &nbsp;
 
 (점수 시스템)
 <p>미니 게임 점수를 기록하고 UI에 실시간 표시</p>
-<img width="1205" height="703" alt="player attack" src="https://github.com/user-attachments/assets/94fd7e4b-8e2c-4fe3-abb3-4548230ee0f1" />
 &nbsp;
 
 (게임 종료 및 복귀)
 <p>미니 게임 종료 시 맵으로 복귀 및 결과 표시</p>
-<img width="1203" height="727" alt="enemy attack" src="https://github.com/user-attachments/assets/c24bedee-c4e4-42c9-85c9-8cebdb5bc2c2" />
 &nbsp;
 
 (카메라 추적 기능)
 <p>캐릭터가 이동할 때 카메라가 자연스럽게 따라오는 기능 구현.</p>
-<img width="1130" height="702" alt="win" src="https://github.com/user-attachments/assets/42d17575-a0a2-42b4-a2cb-28a68a76141a" />
-<img width="880" height="693" alt="lose" src="https://github.com/user-attachments/assets/ebce9475-35ab-4387-a7bd-90552732619e" />
 &nbsp;
 
 ## 구현 기능 (도전 기능)
 (리더보드 시스템)
 <p>최고 점수를 기록하고 UI에 표시</p>
-<img width="1208" height="570" alt="name" src="https://github.com/user-attachments/assets/02d034d4-621e-455f-b3ac-5e0a3f97d047" />
-<img width="1203" height="675" alt="job" src="https://github.com/user-attachments/assets/8fa384b3-e464-45ce-8d57-58de77dc5448" />
 &nbsp;
 
 (NPC와 대화 시스템)
 <p>맵의 NPC와 상호작용 시 대화창 활성화</p>
-<img width="1207" height="663" alt="battle" src="https://github.com/user-attachments/assets/48ef8e28-8a68-4c3c-9314-2e75405da45a" />
 &nbsp;
 
 ## 핵심 기능
