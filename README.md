@@ -61,80 +61,47 @@
 
 ## 구현 기능 (필수 기능)
 (캐릭터 이동 및 맵 탐색)
-<p>간단한 소개와 할 수 있는 행동을 알려줍니다.</p>
+<p>WASD 또는 화살표 키를 사용해 2D 캐릭터가 맵을 자유롭게 이동</p>
 <img width="1191" height="703" alt="title" src="https://github.com/user-attachments/assets/f3e46123-8a42-4ce9-99fa-2b5141951ba0" />
 
 <br>
 (맵 설계 및 상호작용 영역)
-<p>캐릭터의 정보를 표시합니다.</p>
+<p>간단한 맵을 설계하고, 특정 영역에서 상호작용 이벤트 발생</p>
 <img width="852" height="450" alt="status" src="https://github.com/user-attachments/assets/1cf1bb56-1b2d-4619-9b7b-07bd12c5714d" />
 
 <br>
 <br>
 (미니게임 실행)<br>
-<p>전투가 시작되면 1~4마리 교도관이 랜덤으로 등장합니다. (예시에서는 3명이 등장했습니다)</p>
+<p>특정 영역에서 간단한 미니 게임을 실행</p>
 <img width="1207" height="663" alt="battle" src="https://github.com/user-attachments/assets/48ef8e28-8a68-4c3c-9314-2e75405da45a" />
 &nbsp;
 
 (점수 시스템)
-<p>플레이어가 공격을 선택하면 교도관 앞에 숫자가 표시되고, 공격할 수 있습니다.</p>
+<p>미니 게임 점수를 기록하고 UI에 실시간 표시</p>
 <img width="1205" height="703" alt="player attack" src="https://github.com/user-attachments/assets/94fd7e4b-8e2c-4fe3-abb3-4548230ee0f1" />
 &nbsp;
 
-<p>이미 죽은 교도관을 선택하거나, 없는 숫자를 입력하면 "잘못된 입력입니다"를 출력합니다.</p>
-<img width="1207" height="672" alt="input error" src="https://github.com/user-attachments/assets/72a58d6f-20f4-4a96-973d-cdfd3b78f100" />
-&nbsp;
-
-<p>공격력은 다음과 같이 오차를 가집니다.</p>
-<p>(기본 공격력 - 기본 공격력의 10%) ~ (기본 공격력 + 기본 공격력의 10%)</p>
-<img width="852" height="450" alt="status" src="https://github.com/user-attachments/assets/1cf1bb56-1b2d-4619-9b7b-07bd12c5714d" />
-<img width="1206" height="677" alt="attackVariance" src="https://github.com/user-attachments/assets/ea30fe00-1804-4f5d-8bd2-c605b0802179" />
-&nbsp;
-
-<p>죽은 몬스터는 Dead로 표시하고, 텍스트는 어두운 색으로 표시합니다.</p>
-<img width="1211" height="740" alt="enemy dead" src="https://github.com/user-attachments/assets/d86d0ae8-b3fd-4da3-9cab-57928024ab76" />
-&nbsp;
-
 (게임 종료 및 복귀)
-</p>플레이어의 공격이 끝나면, 교도관이 공격합니다.</p>
+<p>미니 게임 종료 시 맵으로 복귀 및 결과 표시</p>
 <img width="1203" height="727" alt="enemy attack" src="https://github.com/user-attachments/assets/c24bedee-c4e4-42c9-85c9-8cebdb5bc2c2" />
 &nbsp;
 
-<p>다음을 입력하면 다음 교도관이 차례대로 공격합니다.</p>
-<img width="1205" height="708" alt="enemy turn1" src="https://github.com/user-attachments/assets/bfbb4420-d347-4c01-9dfa-c6d42e23e147" />
-<img width="1206" height="721" alt="enemy turn2" src="https://github.com/user-attachments/assets/d03149ae-24d8-4e82-87c3-b1a182550f60" />
-&nbsp;
-
-<p>몬스터 차례가 끝나면, 플레이어의 턴으로 돌아옵니다.</p>
-<img width="1208" height="788" alt="player turn" src="https://github.com/user-attachments/assets/2fd00e1e-5ec3-44e2-b93f-f430e03e9fe4" />
-&nbsp;
-
 (카메라 추적 기능)
-<p>모든 교도관이 Dead 상태가 되면 승리, 플레이어가 Dead 상태가 되면 패배하게 됩니다.</p>
+<p>캐릭터가 이동할 때 카메라가 자연스럽게 따라오는 기능 구현.</p>
 <img width="1130" height="702" alt="win" src="https://github.com/user-attachments/assets/42d17575-a0a2-42b4-a2cb-28a68a76141a" />
 <img width="880" height="693" alt="lose" src="https://github.com/user-attachments/assets/ebce9475-35ab-4387-a7bd-90552732619e" />
 &nbsp;
 
 ## 구현 기능 (도전 기능)
 (리더보드 시스템)
-<p>이름과 나의 모습을 선택하면 캐릭터가 생성됩니다.</p>
+<p>최고 점수를 기록하고 UI에 표시</p>
 <img width="1208" height="570" alt="name" src="https://github.com/user-attachments/assets/02d034d4-621e-455f-b3ac-5e0a3f97d047" />
 <img width="1203" height="675" alt="job" src="https://github.com/user-attachments/assets/8fa384b3-e464-45ce-8d57-58de77dc5448" />
 &nbsp;
 
 (NPC와 대화 시스템)
-<p>몬스터 : 신입교도관, 선임교도관, 교도부사관, 교도관리소장</p>
+<p>맵의 NPC와 상호작용 시 대화창 활성화</p>
 <img width="1207" height="663" alt="battle" src="https://github.com/user-attachments/assets/48ef8e28-8a68-4c3c-9314-2e75405da45a" />
-&nbsp;
-
-(아이템 적용)
-<p>아이템을 장착, 장착해제할 수 있습니다.</p>
-<img width="1205" height="420" alt="equip item" src="https://github.com/user-attachments/assets/dfa13e4e-dad2-4889-9679-88a9beb0f169" />
-&nbsp;
-
-(회복 아이템)
-<p>담배, 각성제로 체력과 마나를 회복할 수 있습니다.</p>
-<img width="1207" height="826" alt="store" src="https://github.com/user-attachments/assets/56e8a43d-b62e-40a5-a91d-e447764af37a" />
 &nbsp;
 
 ## 핵심 기능
