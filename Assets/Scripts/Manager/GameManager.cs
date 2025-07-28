@@ -94,7 +94,6 @@ public class GameManager : MonoBehaviour
 
     public void Knockback()
     {
-        Debug.Log("³Ë¹é!");
         PlayerController playerController = FindObjectOfType<PlayerController>();
         playerController.ApplyKnockback();
     }

@@ -15,7 +15,14 @@ public class PlayerController : BaseController
 
     private GameManager _gameManager;
 
+
     private bool _hitNPC;
+
+    private bool _isKnockback;
+    private float _knockbackTimer;
+    public float knockbackForce;
+    public float knockbackDuration;
+
 
     protected override void Awake()
     {
@@ -46,8 +53,9 @@ public class PlayerController : BaseController
         _gameManager = GameManager.Instance;
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         //Debug.Log($"moveDirection = {_movementDirection}");
         // 플레이어가 이동하다가 미니게임 영역(특정영역)에 도달하면 
         // 특정영역을 알려면 InteractiveManager가 알려줘야 한다. InteractiveManager를 가져오자. 
@@ -79,21 +87,47 @@ public class PlayerController : BaseController
             _hitNPC = false;
             _gameManager.RequestDialogue();
         }
-        // NPC와 충돌은 했지만 E키를 안 눌렀으면 
-        //else if(_hitNPC && !Input.GetKeyDown(KeyCode.E))
-        //{
-        //    _hitNPC = false;
-        //}
+
+        // 넉백 상태이면 넉백 타이머를 작동시키고 넉백 지속시간이 끝나면 넉백 상태 해제 
+        if (_isKnockback)
+        {
+            _knockbackTimer -= Time.deltaTime;
+            if(_knockbackTimer <= 0)
+            {
+                _isKnockback = false;
+            }
+        }
+
+        if(_rigid.velocity.y == -1)
+        {
+            Debug.Log($"벨로시티 : {_rigid.velocity}");
+        }
     }
 
     protected override void FixedUpdate()
     {
-        base.FixedUpdate();
+        if (!_isKnockback)
+            base.FixedUpdate();
     }
 
     public void ApplyKnockback()
     {
         Debug.Log("넉백 적용");
+        Knockback();
+    }
+
+    public void Knockback()
+    {
+        if (!_isKnockback)
+        {
+            // 넉백 적용 
+            _rigid.velocity = Vector2.zero;
+            _rigid.AddForce(Vector3.down * knockbackForce, ForceMode2D.Impulse);
+
+            // 넉백 상태 설정, 타이머 초기화
+            _isKnockback = true;
+            _knockbackTimer = knockbackDuration;
+        }
     }
 
     private void OnMove(InputValue inputValue)
