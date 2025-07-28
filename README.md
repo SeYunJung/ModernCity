@@ -95,16 +95,11 @@
 &nbsp;
 
 ## 핵심 기능
-<img width="1110" height="622" alt="singleton" src="https://github.com/user-attachments/assets/48dea3c5-42c9-479c-a880-4a3df6462e34" />
-<img width="1107" height="618" alt="management class" src="https://github.com/user-attachments/assets/3c729962-9515-482c-a52e-c6b782eb4519" />
 
 <br><br>
 
 ## 트러블 슈팅
-<img width="1110" height="621" alt="trouble shooting1-1" src="https://github.com/user-attachments/assets/11abc978-c0b5-4682-8327-d26bbd750bea" />
-<img width="1111" height="622" alt="trouble shooting1-2" src="https://github.com/user-attachments/assets/aebdd0ea-c7ea-425b-8c02-846597bf8269" />
 
 <br><br>
 
 ## 프로젝트 회고 
-<img width="1111" height="622" alt="project " src="https://github.com/user-attachments/assets/ce243454-8fe1-4653-8947-ee4c8082a952" />
